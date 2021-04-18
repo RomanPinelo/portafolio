@@ -624,7 +624,6 @@ html {
   margin: 20px 0;
   width: 100%;
   resize: none;
-  outline: none;
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 10px;
@@ -634,6 +633,10 @@ html {
   height: 5vh;
   font-size: 1.25rem;
   padding-left: 20px;
+}
+
+.main__information--menu .contact .contact__form input:focus {
+  outline: none;
 }
 
 .main__information--menu .contact .contact__form textarea {
