@@ -1,0 +1,668 @@
+/* 
+  Se utilizará el fuente Poppins para los títulos 
+  y la fuente Open Sans para el resto del los testos
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*
+   purple -> #6956af
+   orange -> #fb5b0f
+*/
+
+/************************************************************* 
+  GENERAL STYLES
+*************************************************************/
+body {
+  background: #111;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/************************************************************* 
+  MENU BUTTON STYLES ON CELL PHONE SCREEN
+*************************************************************/
+.main__menuButton {
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 2.5rem;
+  width: 3.125rem;
+  padding: 0.5rem;
+  position: fixed;
+}
+
+/************************************************************* 
+  ESTILOS DEL MENU Y EL DIV DE INFORMACIÓN
+*************************************************************/
+.main {
+  width: 100%;
+  position: relative;
+}
+
+.main__menuButton--options {
+  background: #222;
+  position: absolute;
+  left: -2000px;
+  top: 60px;
+  width: 80%;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+  z-index: 50;
+}
+
+/* Desplaza el menu al hacer click en el botón de menu en la
+  vista de celulares. */
+.main__menuButton--options.active {
+  left: 0;
+}
+
+.main__menuButton--options li {
+  width: 100%;
+  height: 20%;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  list-style: none;
+}
+
+.main__menuButton--options li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px 0px 10px 20px;
+}
+
+.main__menuButton--options li a:hover {
+  color: #6956af;
+  /* color: #fb5b0f; */
+}
+
+/* Al presionar el botón cambia a color morado */
+.main__menuButton--options li a.active {
+  color: #6956af;
+  /* color: #fb5b0f; */
+}
+
+/* Cambiar la altura del menu cuando el teléfono esta horizontal */
+@media only screen and (orientation: landscape) {
+  .main__menuButton--options {
+    height: 60vh;
+  }
+}
+
+/* Cambiar logo del botón del menu */
+.fa-times {
+  display: none; /* De inicio el icono de la X no se ve
+                    y las barras si */
+}
+
+.fa-bars.noVisible {
+  display: none;  /* Al hacer click en el botón de menu,
+                    al icono de las barras se agrega la clase
+                    noVisible y desaparece. Si vuelvo a hacer 
+                    click, como tiene esa clase, ahora se la 
+                    quita y aparece*/
+}
+
+.fa-times.Visible {
+  display: inline;  /* Al hacer click en el botón de menu,
+                    al icono de la equis se agrega la clase
+                    Visible y aparece. Si vuelvo a hacer 
+                    click, como tiene esa clase, ahora se la 
+                    quita y desaparece*/
+  color: #6956af;
+  /* color: #fb5b0f; */
+}
+
+
+/************************************************************* 
+  ESTILOS DEL DIV DE TODA LA INFORMACIÓN
+*************************************************************/
+/* All div .main__information */
+.main__information {
+  width: 100%;
+  height: calc(100vh - 62px);
+  overflow: auto;
+}
+
+/* Profile photo section */
+.main__information--profilePhoto {
+  outline:1px solid #555;
+  display: block;
+  width: 90%;
+  height: 70vh;
+  margin: 1.25rem auto;
+}
+
+/* .main__information--profilePhoto img {
+  poner los estilos al agregar la foto 
+} */
+
+/* Description div */
+.main__information--description {
+  width: 100%;
+}
+
+.main__information--description h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main__information--description .animatedText {
+  width: 90%;
+  height: 20vh;
+  margin: 0 auto;
+}
+
+.animatedText .Iam {
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.animatedText .myPosition {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #6956af;
+  /* color: #fb5b0f; */
+}
+
+.main__information--description p, 
+.main__information--menu .portfolio .portfolio__description, 
+.main__information--menu .contact .contactDescription {
+  width: 90%;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+
+/* Cambiar el margen superior del párrafo cuando el teléfono este horizontal */
+@media only screen and (orientation: landscape) {
+  .main__information--description p {
+    margin-top: 4rem;
+  }
+}
+
+/* about div */
+.main__information--menu .about {
+  width: 100%;
+}
+
+.main__information--menu .about .titleAbout {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.main__information--menu h2 {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.main__information--menu .about .titleAbout span {
+  color: #6956af;
+  /* color: #fb5b0f; */
+}
+
+.main__information--menu .about .titleAbout::before {
+  content: 'RESUMEN';
+  font-size: 4.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+}
+
+.main__information--menu .about .dataAboutMe {
+  line-height: 50px;
+  font-size: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main__information--menu .about .dataAboutMe span {
+  display: block;
+  color: #aaa;
+}
+
+.main__information--menu .about .dataAboutMe a {
+  display: block;
+  color: #fff;
+}
+
+.main__information--menu .about .dataAboutMe a:hover {
+  color: #aaa;
+}
+
+.main__information--menu .about .dataAboutMe .mail {
+  margin-left: -2.5%;
+}
+
+.main__information--menu .about .descarga {
+  display: block;
+  background: #6956af;
+  /* background: #fb5b0f; */
+  color: #fff;
+  width: 18rem;
+  margin: 4rem auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 15px 0;
+  border: 4px solid #6956af;
+  /* border: 4px solid #fb5b0f; */
+  border-radius: 9999px;
+}
+
+.main__information--menu .about .descarga:hover {
+  background: #111;
+}
+
+/* Logos */
+.main__information--menu .about .skills__list li {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.main__information--menu .about .skills__list li .fa-html5 {
+  color: #e34c26;
+}
+
+.main__information--menu .about .skills__list li .fa-css3 {
+  color: #264de4;
+}
+
+.main__information--menu .about .skills__list li div {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+.main__information--menu .about .skills__list li div .javascript {
+  background: rgb(255, 238, 0);
+}
+
+.main__information--menu .about .skills__list li div .bootstrap {
+  background: #682ebe;
+  /* background: #563d7c; */
+}
+
+.main__information--menu .about .skills__list li div img {
+  width: 100%;
+  height: 100%;
+}
+
+.main__information--menu .about .expEdu .expEdu__info {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main__information--menu .about .expEdu .expEdu__info div {
+  display: flex;
+  align-items: center;
+}
+
+.main__information--menu .about .expEdu .expEdu__info div .expEdu__info--logo {
+  display: inline-block;
+  background: #6956af;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.main__information--menu .about .expEdu .expEdu__info div .expEdu__info--logo i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main__information--menu .about .expEdu .expEdu__info div .expEdu__info--date {
+  display: inline-block;
+  margin-left: 2.5rem;
+  background: #222;
+  padding: 7.5px 30px;
+  border-radius: 9999px;
+}
+
+.main__information--menu .about .expEdu .expEdu__info h3 .expEdu__info--place {
+  color: #555;
+}
+
+.main__information--menu .about .expEdu .expEdu__info p {
+  letter-spacing: 3px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.main__information--menu .about .expEdu .expEdu__info p a {
+  color: #999;
+}
+
+.main__information--menu .about .expEdu .expEdu__info p a:hover {
+  color: #fff;
+}
+
+/* Portfolio div */
+.main__information--menu .portfolio {
+  width: 100%;
+}
+
+.main__information--menu .portfolio .titlePortfolio {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.main__information--menu .portfolio .titlePortfolio::before {
+  content: 'TRABAJOS';
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+}
+
+.main__information--menu .portfolio .portfolioWorksButton {
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 2.5rem;
+  width: 3.125rem;
+  padding: 0.5rem;
+  margin-left: 0.625rem;
+}
+
+.main__information--menu .portfolio .portfolioWorksButton i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Cambiar logo del botón que muestra y oculta los trabajos */
+.fa-caret-up {
+  display: none; /* De inicio el icono de la flecha hacia arriba
+                    no se ve y la flecha hacia abajo si */
+}
+
+.fa-caret-down.noVisible1 {
+  display: none;  /* Al hacer click en el botón,
+                    al icono de la flecha hacia abajo se 
+                    agrega la clase noVisible y desaparece. 
+                    Si vuelvo a hacer click, como tiene esa 
+                    clase, ahora se la quita y aparece*/
+}
+
+.fa-caret-up.Visible1 {
+  display: inline;  /* Al hacer click en el botón,
+                    al icono de la flecha hacia arriba se 
+                    agrega la clase Visible y aparece. Si 
+                    vuelvo a hacer click, como tiene esa 
+                    clase, ahora se la quita y desaparece*/
+  color: #6956af;
+  /* color: #fb5b0f; */
+}
+
+/* Divs que contienen la informacion de los trabajos*/
+.main__information--menu .portfolio .portfolioWorks {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.main__information--menu .portfolio .portfolioWorks.active1 {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.main__information--menu .portfolio .portfolioWorks .portfolioWorks__container {
+  background: gray;
+  width: 90%;
+  height: 50vh;
+  margin: 1rem auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Cambiar la altura de los contenedores cuando el teléfono este horizontal */
+@media only screen and (orientation: landscape) {
+  .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container {
+    height: 80vh;
+  }
+}
+
+.main__information--menu .portfolio .portfolioWorks .portfolioWorks__container .portfolioWorks__container--image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.main__information--menu .portfolio .portfolioWorks .portfolioWorks__container .portfolioWorks__container--info {
+  background: #6956afaa;
+  text-align: center;
+  color: #080024;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.main__information--menu .portfolio .portfolioWorks .portfolioWorks__container:hover .portfolioWorks__container--info {
+  transform: scale(1);
+}
+
+.main__information--menu .portfolio .portfolioWorks .portfolioWorks__container .portfolioWorks__container--info a {
+  color: #201467;
+  font-size: 0.75rem;
+}
+
+/* contact div */
+.main__information--menu .contact .titleContact {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.main__information--menu .contact .titleContact::before {
+  content: 'CONTÁCTAME';
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+}
+
+.main__information--menu .contact .mailPhoneContainer {
+  width: 90%;
+  margin: 25px auto;
+}
+
+.main__information--menu .contact .mailPhoneContainer i {
+  color: #6956af;
+  font-size: 2rem;
+}
+
+.main__information--menu .contact .mailPhoneContainer p {
+  color: #555;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.main__information--menu .contact .mailPhoneContainer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+/* Hover effects */
+.main__information--menu .contact .mailPhoneContainer a:hover {
+  color: #555;
+}
+
+.main__information--menu .contact .mailPhoneContainer .mailPhoneContainer__mail {
+  margin-bottom: 30px;
+}
+
+.main__information--menu .contact .socialMediaLinks {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main__information--menu .contact .socialMediaLinks ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main__information--menu .contact .socialMediaLinks li {
+  list-style: none;
+  width: 25%;
+}
+
+.main__information--menu .contact .socialMediaLinks li a {
+  display: block;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  background: #fff;
+}
+
+.main__information--menu .contact .socialMediaLinks li a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.main__information--menu .contact .socialMediaLinks li .facebook {
+  background: #3b5998;
+}
+
+.main__information--menu .contact .socialMediaLinks li .linkedin {
+  background: #0e76a8;
+}
+
+.main__information--menu .contact .socialMediaLinks li .whatsapp {
+  background: #00bb2d;
+}
+
+.main__information--menu .contact .socialMediaLinks li .github {
+  background: #171515;
+}
+
+/* Hover effects */
+.main__information--menu .contact .socialMediaLinks li .facebook:hover {
+  background: #25375f;
+}
+
+.main__information--menu .contact .socialMediaLinks li .linkedin:hover {
+  background: #0e5d81;
+}
+
+.main__information--menu .contact .socialMediaLinks li .whatsapp:hover {
+  background: #187a2f;
+}
+
+.main__information--menu .contact .socialMediaLinks li .github:hover {
+  background: #000000;
+}
+
+/* Formulario de contacto */
+.main__information--menu .contact .contact__form {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.main__information--menu .contact .contact__form label,
+.main__information--menu .contact .contact__form input,
+.main__information--menu .contact .contact__form textarea {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+  resize: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.main__information--menu .contact .contact__form input {
+  height: 5vh;
+  font-size: 1.25rem;
+  padding-left: 20px;
+}
+
+.main__information--menu .contact .contact__form textarea {
+  padding: 15px;
+  text-align: justify;
+}
+
+.main__information--menu .contact .contact__form button {
+  background: #6956af;
+  display: block;
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  outline: none;
+  border: 1px solid #6956af;
+  border-radius: 9999px;
+  transition: 0.5s;
+}
+
+.main__information--menu .contact .contact__form button:hover {
+  background: transparent;
+}
+
+/* Cambiar la altura de los input cuando el teléfono este horizontal */
+@media only screen and (orientation: landscape) {
+  .main__information--menu .contact .contact__form input {
+    height: 12vh;
+  }
+}
