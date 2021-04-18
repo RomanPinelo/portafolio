@@ -35,7 +35,6 @@ html {
   font-size: 2.5rem;
   width: 3.125rem;
   padding: 0.5rem;
-  position: fixed;
 }
 
 /************************************************************* 
@@ -51,8 +50,8 @@ html {
   position: absolute;
   left: -2000px;
   top: 60px;
-  width: 80%;
-  height: 40vh;
+  width: 18rem;
+  height: 16rem;
   margin: 0;
   padding: 0;
   transition: 0.5s;
@@ -95,13 +94,6 @@ html {
   /* color: #fb5b0f; */
 }
 
-/* Cambiar la altura del menu cuando el teléfono esta horizontal */
-@media only screen and (orientation: landscape) {
-  .main__menuButton--options {
-    height: 60vh;
-  }
-}
-
 /* Cambiar logo del botón del menu */
 .fa-times {
   display: none; /* De inicio el icono de la X no se ve
@@ -141,8 +133,8 @@ html {
 .main__information--profilePhoto {
   outline:1px solid #555;
   display: block;
-  width: 90%;
-  height: 70vh;
+  width: 20.25rem;
+  height: 28rem;
   margin: 1.25rem auto;
 }
 
@@ -163,7 +155,7 @@ html {
 
 .main__information--description .animatedText {
   width: 90%;
-  height: 20vh;
+  height: 8rem;
   margin: 0 auto;
 }
 
@@ -447,19 +439,12 @@ html {
 
 .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container {
   background: gray;
-  width: 90%;
-  height: 50vh;
+  width: 20.25rem;
+  height: 20rem;
   margin: 1rem auto;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-}
-
-/* Cambiar la altura de los contenedores cuando el teléfono este horizontal */
-@media only screen and (orientation: landscape) {
-  .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container {
-    height: 80vh;
-  }
 }
 
 .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container .portfolioWorks__container--image {
@@ -626,11 +611,12 @@ html {
   resize: none;
   font-size: 1.5rem;
   font-weight: bold;
+  border: none;
   border-radius: 10px;
 }
 
 .main__information--menu .contact .contact__form input {
-  height: 5vh;
+  height: 2rem;
   font-size: 1.25rem;
   padding-left: 20px;
 }
@@ -642,6 +628,10 @@ html {
 .main__information--menu .contact .contact__form textarea {
   padding: 15px;
   text-align: justify;
+}
+
+.main__information--menu .contact .contact__form textarea:focus {
+  outline: none;
 }
 
 .main__information--menu .contact .contact__form button {
@@ -661,11 +651,4 @@ html {
 
 .main__information--menu .contact .contact__form button:hover {
   background: transparent;
-}
-
-/* Cambiar la altura de los input cuando el teléfono este horizontal */
-@media only screen and (orientation: landscape) {
-  .main__information--menu .contact .contact__form input {
-    height: 12vh;
-  }
 }
