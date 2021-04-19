@@ -5,17 +5,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /*
-   purple -> #6956af
-   orange -> #fb5b0f
+  #fb5b0f
 */
 
 /************************************************************* 
   GENERAL STYLES
 *************************************************************/
+:root {
+  --decorado: #6956af;
+  --backgroundBody: #111;
+  --text: #fff;
+  --htmlLogo: #e34c26;
+  --cssLogo: #264de4;
+  --javascriptLogo: rgb(255, 238, 0);
+  --bootstrapLogo: #682ebe;
+  --bootstrapLogo1: #563d7c;
+  --portfolioBg: #6956afaa;
+  --portfolioText: #080024;
+  --portfolioLink: #201467;
+  --facebookLogo: #3b5998;
+  --linkedinLogo: #0e76a8;
+  --whatsappLogo: #00bb2d;
+  --githubLogo: #171515;
+  --fbLogoHover: #25375f;
+  --liLogoHover: #0e5d81;
+  --waLogoHover: #187a2f;
+  --ghLogoHover: #000;
+}
+
 body {
-  background: #111;
+  background: var(--backgroundBody);
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
+  color: var(--text);
 }
 
 * {
@@ -67,14 +88,14 @@ html {
 .main__menuButton--options li {
   width: 100%;
   height: 20%;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--text);
   list-style: none;
 }
 
 .main__menuButton--options li a {
   display: block;
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   height: 100%;
   font-size: 1.25rem;
@@ -84,14 +105,12 @@ html {
 }
 
 .main__menuButton--options li a:hover {
-  color: #6956af;
-  /* color: #fb5b0f; */
+  color: var(--decorado);
 }
 
 /* Al presionar el botón cambia a color morado */
 .main__menuButton--options li a.active {
-  color: #6956af;
-  /* color: #fb5b0f; */
+  color: var(--decorado);
 }
 
 /* Cambiar logo del botón del menu */
@@ -114,8 +133,7 @@ html {
                     Visible y aparece. Si vuelvo a hacer 
                     click, como tiene esa clase, ahora se la 
                     quita y desaparece*/
-  color: #6956af;
-  /* color: #fb5b0f; */
+  color: var(--decorado);
 }
 
 
@@ -168,8 +186,7 @@ html {
   font-size: 3rem;
   font-style: italic;
   font-weight: bold;
-  color: #6956af;
-  /* color: #fb5b0f; */
+  color: var(--decorado);
 }
 
 .main__information--description p, 
@@ -210,8 +227,7 @@ html {
 }
 
 .main__information--menu .about .titleAbout span {
-  color: #6956af;
-  /* color: #fb5b0f; */
+  color: var(--decorado);
 }
 
 .main__information--menu .about .titleAbout::before {
@@ -241,7 +257,7 @@ html {
 
 .main__information--menu .about .dataAboutMe a {
   display: block;
-  color: #fff;
+  color: var(--text);
 }
 
 .main__information--menu .about .dataAboutMe a:hover {
@@ -254,17 +270,15 @@ html {
 
 .main__information--menu .about .descarga {
   display: block;
-  background: #6956af;
-  /* background: #fb5b0f; */
-  color: #fff;
+  background: var(--decorado);
+  color: var(--text);
   width: 18rem;
   margin: 4rem auto;
   text-align: center;
   text-decoration: none;
   font-size: 2rem;
   padding: 15px 0;
-  border: 4px solid #6956af;
-  /* border: 4px solid #fb5b0f; */
+  border: 4px solid var(--decorado);
   border-radius: 9999px;
 }
 
@@ -279,11 +293,11 @@ html {
 }
 
 .main__information--menu .about .skills__list li .fa-html5 {
-  color: #e34c26;
+  color: var(--htmlLogo);
 }
 
 .main__information--menu .about .skills__list li .fa-css3 {
-  color: #264de4;
+  color: var(--cssLogo);
 }
 
 .main__information--menu .about .skills__list li div {
@@ -293,12 +307,11 @@ html {
 }
 
 .main__information--menu .about .skills__list li div .javascript {
-  background: rgb(255, 238, 0);
+  background: var(--javascriptLogo);
 }
 
 .main__information--menu .about .skills__list li div .bootstrap {
-  background: #682ebe;
-  /* background: #563d7c; */
+  background: var(--bootstrapLogo);
 }
 
 .main__information--menu .about .skills__list li div img {
@@ -318,7 +331,7 @@ html {
 
 .main__information--menu .about .expEdu .expEdu__info div .expEdu__info--logo {
   display: inline-block;
-  background: #6956af;
+  background: var(--decorado);
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -355,7 +368,7 @@ html {
 }
 
 .main__information--menu .about .expEdu .expEdu__info p a:hover {
-  color: #fff;
+  color: var(--text);
 }
 
 /* Portfolio div */
@@ -419,8 +432,7 @@ html {
                     agrega la clase Visible y aparece. Si 
                     vuelvo a hacer click, como tiene esa 
                     clase, ahora se la quita y desaparece*/
-  color: #6956af;
-  /* color: #fb5b0f; */
+  color: var(--decorado);
 }
 
 /* Divs que contienen la informacion de los trabajos*/
@@ -438,7 +450,6 @@ html {
 }
 
 .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container {
-  background: gray;
   width: 20.25rem;
   height: 20rem;
   margin: 1rem auto;
@@ -455,9 +466,9 @@ html {
 }
 
 .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container .portfolioWorks__container--info {
-  background: #6956afaa;
+  background: var(--portfolioBg);
   text-align: center;
-  color: #080024;
+  color: var(--portfolioText);
   font-weight: bold;
   width: 100%;
   height: 100%;
@@ -471,7 +482,7 @@ html {
 }
 
 .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container .portfolioWorks__container--info a {
-  color: #201467;
+  color: var(--portfolioLink);
   font-size: 0.75rem;
 }
 
@@ -504,7 +515,7 @@ html {
 }
 
 .main__information--menu .contact .mailPhoneContainer i {
-  color: #6956af;
+  color: var(--decorado);
   font-size: 2rem;
 }
 
@@ -516,7 +527,7 @@ html {
 }
 
 .main__information--menu .contact .mailPhoneContainer a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   font-size: 1.125rem;
 }
@@ -552,7 +563,7 @@ html {
   height: 50px;
   border-radius: 50%;
   position: relative;
-  background: #fff;
+  background: var(--text);
 }
 
 .main__information--menu .contact .socialMediaLinks li a i {
@@ -560,40 +571,40 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: var(--text);
 }
 
 .main__information--menu .contact .socialMediaLinks li .facebook {
-  background: #3b5998;
+  background: var(--facebookLogo);
 }
 
 .main__information--menu .contact .socialMediaLinks li .linkedin {
-  background: #0e76a8;
+  background: var(--linkedinLogo);
 }
 
 .main__information--menu .contact .socialMediaLinks li .whatsapp {
-  background: #00bb2d;
+  background: var(--whatsappLogo);
 }
 
 .main__information--menu .contact .socialMediaLinks li .github {
-  background: #171515;
+  background: var(--githubLogo);
 }
 
 /* Hover effects */
 .main__information--menu .contact .socialMediaLinks li .facebook:hover {
-  background: #25375f;
+  background: var(--fbLogoHover);
 }
 
 .main__information--menu .contact .socialMediaLinks li .linkedin:hover {
-  background: #0e5d81;
+  background: var(--liLogoHover);
 }
 
 .main__information--menu .contact .socialMediaLinks li .whatsapp:hover {
-  background: #187a2f;
+  background: var(--waLogoHover);
 }
 
 .main__information--menu .contact .socialMediaLinks li .github:hover {
-  background: #000000;
+  background: var(--ghLogoHover);
 }
 
 /* Formulario de contacto */
@@ -635,16 +646,16 @@ html {
 }
 
 .main__information--menu .contact .contact__form button {
-  background: #6956af;
+  background: var(--decorado);
   display: block;
-  color: #fff;
+  color: var(--text);
   width: 150px;
   height: 50px;
   margin: auto;
   font-size: 1.5rem;
   font-weight: bold;
   outline: none;
-  border: 1px solid #6956af;
+  border: 1px solid var(--decorado);
   border-radius: 9999px;
   transition: 0.5s;
 }
