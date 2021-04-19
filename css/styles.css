@@ -200,13 +200,6 @@ html {
   line-height: 40px;
 }
 
-/* Cambiar el margen superior del párrafo cuando el teléfono este horizontal */
-@media only screen and (orientation: landscape) {
-  .main__information--description p {
-    margin-top: 4rem;
-  }
-}
-
 /* about div */
 .main__information--menu .about {
   width: 100%;
@@ -387,7 +380,7 @@ html {
 
 .main__information--menu .portfolio .titlePortfolio::before {
   content: 'TRABAJOS';
-  font-size: 3.5rem;
+  font-size: 3.75rem;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   color: #333;
@@ -498,7 +491,7 @@ html {
 
 .main__information--menu .contact .titleContact::before {
   content: 'CONTÁCTAME';
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   color: #333;
