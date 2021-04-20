@@ -33,7 +33,6 @@ let home = document.getElementById('home');
 let about = document.getElementById('about');
 let portfolio = document.getElementById('portfolio');
 let contact = document.getElementById('contact');
-let blog = document.getElementById('blog');
 
 home.addEventListener('click', () => {
   document.getElementById('home').classList.toggle('active');
@@ -67,14 +66,6 @@ contact.addEventListener('click', () => {
   comprobar();
 });
 
-blog.addEventListener('click', () => {
-  document.getElementById('blog').classList.toggle('active');
-  document.getElementById('main__menuButton--options').classList.toggle('active');
-  document.getElementById('bars').classList.toggle('noVisible');
-  document.getElementById('equis').classList.toggle('Visible');
-  comprobar();
-});
-
 /* 
 Esta función es llamada cada vez que presionamos un botón y cambia de color.
 La idea es que si ya todos los botones están de diferente color, se reinicien al color original.
@@ -88,15 +79,12 @@ function comprobar() {
   console.log(hasActive2);
   let hasActive3 = contact.classList.contains('active');
   console.log(hasActive3);
-  let hasActive4 = blog.classList.contains('active');
-  console.log(hasActive4);
 
-  if (hasActive && hasActive1 && hasActive2 && hasActive3 && hasActive4){
+  if (hasActive && hasActive1 && hasActive2 && hasActive3){
     document.getElementById('home').classList.toggle('active');
     document.getElementById('about').classList.toggle('active');
     document.getElementById('portfolio').classList.toggle('active');
     document.getElementById('contact').classList.toggle('active');
-    document.getElementById('blog').classList.toggle('active');
   }
 }
 
