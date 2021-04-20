@@ -109,3 +109,12 @@ worksMenu.addEventListener('click', () => {
   document.getElementById('downArrow').classList.toggle('noVisible1');
   document.getElementById('upArrow').classList.toggle('Visible1');
 });
+
+
+/* Con estas lineas obtenemos la longitud que debemos dar al 
+stroke-dasharray y stroke-dashoffset de cada letra en el CSS*/
+const logo = document.querySelectorAll('#desarrollo path');
+
+for(let i=0; i<logo.length; i++){
+  console.log('Letter ' + i + ' is ' + logo[i].getTotalLength());
+}

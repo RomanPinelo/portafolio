@@ -168,7 +168,84 @@ html {
 .main__information--description h1 {
   text-align: center;
   margin-top: 50px;
-  font-family: 'Poppins', sans-serif;
+}
+
+/* Animación del hola */
+#desarrollo {
+  animation: fill-letter 5s linear infinite;
+}
+    
+#desarrollo path:nth-child(1) {
+  stroke-dasharray: 68;
+  stroke-dashoffset: 68;
+  animation: letter-anim 5s linear infinite;
+}
+#desarrollo path:nth-child(2) {
+  stroke-dasharray: 134;
+  stroke-dashoffset: 134;
+  animation: letter-anim1 5s linear infinite;
+}
+#desarrollo path:nth-child(3) {
+  stroke-dasharray: 95;
+  stroke-dashoffset: 95;
+  animation: letter-anim2 5s linear infinite;
+}
+#desarrollo path:nth-child(4) {
+  stroke-dasharray: 65;
+  stroke-dashoffset: 65;
+  animation: letter-anim3 5s linear infinite;
+}
+#desarrollo path:nth-child(5) {
+  stroke-dasharray: 112;
+  stroke-dashoffset: 112;
+  animation: letter-anim4 5s linear infinite;
+}
+#desarrollo path:nth-child(6) {
+  stroke-dasharray: 68;
+  stroke-dashoffset: 68;
+  animation: letter-anim5 5s linear infinite;
+}
+
+@keyframes letter-anim {
+  0%{stroke-dashoffset: 68;}
+  10%{stroke-dashoffset: 68;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes letter-anim1 {
+  0%{stroke-dashoffset: 134;}
+  20%{stroke-dashoffset: 134;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes letter-anim2 {
+  0%{stroke-dashoffset: 95;}
+  30%{stroke-dashoffset: 95;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes letter-anim3 {
+  0%{stroke-dashoffset: 65;}
+  40%{stroke-dashoffset: 65;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes letter-anim4 {
+  0%{stroke-dashoffset: 112;}
+  50%{stroke-dashoffset: 112;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes letter-anim5 {
+  0%{stroke-dashoffset: 68;}
+  60%{stroke-dashoffset: 68;}
+  100%{stroke-dashoffset: 0;}
+}
+
+@keyframes fill-letter {
+  0%{fill: transparent;}
+  80%{fill: transparent;}
+  100%{fill: #fff;}
 }
 
 .main__information--description .animatedText {
