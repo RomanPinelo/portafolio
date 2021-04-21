@@ -16,8 +16,8 @@
     <main class="main">
 
       <div class="main__menuButton" id="main__menuButton">
-        <i class="fa fa-bars" id="bars" aria-hidden="true"></i>
-        <i class="fa fa-times" id="equis"></i>
+        <i class="fa fa-bars openMenu" id="bars" aria-hidden="true"></i>
+        <i class="fa fa-times closeMenu" id="equis"></i>
       </div>
 
       <ul class="main__menuButton--options" id="main__menuButton--options">
@@ -32,15 +32,33 @@
       <div class="main__information">
 
         <section class="main__information--profilePhoto">
-          <img src="#" alt="Profile photo">
+          <img src="./img/yo2.jpg" alt="Profile photo">
         </section>
 
-        <aside class="main__information--menu">
+        <section class="main__information--menu">
+
+          <div class="main__information--firstMessage" id="firstMessageDesktop">
+            <div class="textStringsDiv1" id="textStrings1">
+              <p>
+                <i class="bienvenida">¡Bienvenido!</i> <br>
+                Te invito a echar un vistazo a mi portafolio. Esta diseñado bajo el 
+                concepto Mobile First, por lo tanto, se puede ver en diferentes 
+                dispositivos. Estoy en busqueda de trabajo. <br> 
+                ¡Espero te agrade!
+              </p>
+            </div>
+            <span class="saludo__bienvenida" id="typedFirstMessage"></span>
+          </div>
 
           <div id="description" class="home main__information--description">
 
+            <span id="homeDivLogo" class="home-div-logo">
+              <i class="fa fa-home homeOpen" id="homeDesktop" aria-hidden="true"></i>
+              <i class="fa fa-times homeClose" id="equisHomeDesktop"></i>
+            </span>
+
             <h1>
-              <svg id="desarrollo" width="107" height="33" viewBox="0 0 107 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id="saludo" width="107" height="33" viewBox="0 0 107 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.09198 6.40798C5.14798 6.40798 6.01198 6.73198 6.68398 7.37998C7.37998 8.00398 7.72798 8.78398 7.72798 9.71999C7.72798 10.68 7.37998 11.484 6.68398 12.132C6.01198 12.78 5.14798 13.104 4.09198 13.104C3.01198 13.104 2.12398 12.78 1.42798 12.132C0.755983 11.484 0.419983 10.68 0.419983 9.71999C0.419983 8.78398 0.755983 8.00398 1.42798 7.37998C2.12398 6.73198 3.01198 6.40798 4.09198 6.40798ZM1.39198 15.624H6.61198L7.33198 32.868H0.671983L1.39198 15.624Z" stroke="white"/>
                 <path d="M35.2176 1.72798V27H29.0616V16.596H19.4856V27H13.3296V1.72798H19.4856V11.628H29.0616V1.72798H35.2176Z" stroke="white"/>
                 <path d="M48.8057 27.288C46.8377 27.288 45.0617 26.868 43.4777 26.028C41.9177 25.188 40.6817 23.988 39.7697 22.428C38.8817 20.868 38.4377 19.044 38.4377 16.956C38.4377 14.892 38.8937 13.08 39.8057 11.52C40.7177 9.93599 41.9657 8.72398 43.5497 7.88398C45.1337 7.04398 46.9097 6.62398 48.8777 6.62398C50.8457 6.62398 52.6217 7.04398 54.2057 7.88398C55.7897 8.72398 57.0377 9.93599 57.9497 11.52C58.8617 13.08 59.3177 14.892 59.3177 16.956C59.3177 19.02 58.8497 20.844 57.9137 22.428C57.0017 23.988 55.7417 25.188 54.1337 26.028C52.5497 26.868 50.7737 27.288 48.8057 27.288ZM48.8057 21.96C49.9817 21.96 50.9777 21.528 51.7937 20.664C52.6337 19.8 53.0537 18.564 53.0537 16.956C53.0537 15.348 52.6457 14.112 51.8297 13.248C51.0377 12.384 50.0537 11.952 48.8777 11.952C47.6777 11.952 46.6817 12.384 45.8897 13.248C45.0977 14.088 44.7017 15.324 44.7017 16.956C44.7017 18.564 45.0857 19.8 45.8537 20.664C46.6457 21.528 47.6297 21.96 48.8057 21.96Z" stroke="white"/>
@@ -51,11 +69,11 @@
             </h1>
 
             <div class="animatedText">
-              <div id="textStrings">
-                <p>Soy<br> <i class="myPosition">Roman Pinelo</i></p>
-                <p>Soy<br> <i class="myPosition">Docente</i></p>
-                <p>Soy<br> <i class="myPosition">Ingeniero</i></p>
-                <p>Soy<br> <i class="myPosition">Músico</i></p>
+              <div class="textStringsDiv" id="textStrings">
+                <p>Soy <i class="myPosition">Roman Pinelo</i></p>
+                <p>Soy <i class="myPosition">Docente</i></p>
+                <p>Soy <i class="myPosition">Ingeniero</i></p>
+                <p>Soy <i class="myPosition">Músico</i></p>
               </div>
               <span class="Iam" id="typed"></span>
             </div>
@@ -78,9 +96,14 @@
               conocimientos.
             </p>
 
-          </div>
+          </div> <!-- home div -->
 
           <div id="aboutMe" class="about">
+
+            <span id="aboutDivLogo" class="about-div-logo">
+              <i class="fa fa-user aboutOpen" id="aboutDesktop" aria-hidden="true"></i>
+              <i class="fa fa-times aboutClose" id="equisAboutDesktop"></i>
+            </span>
 
             <h2 class="titleAbout">ACERCA DE <span>MÍ</span></h2>
 
@@ -88,7 +111,7 @@
               <span>Nombre:</span> Roman 
               <span>Apellido:</span> Pinelo 
               <span>Nacionalidad:</span> Mexicano 
-              <span>Dirección:</span> Av. Fresno 26-B, U.H. CTM XIII Valle de Ecatepec, Estado de México 
+              <span>Dirección:</span> Av. Fresno 26-B, U.H. CTM XIII Valle de Ecatepec, Ecatepec de Morelos, Estado de México.
               <span>Teléfono:</span> <a href="tel:5545318907" target="_blank">55 - 45 - 31 - 89 - 07</a> 
               <span>Email:</span> <a class="mail" href="mailto:prof.roman.pinelo@gmail.com" target="_blank">prof.roman.pinelo@gmail.com</a> 
               <span>Lenguajes:</span> Español (Nativo), Inglés (Leído)
@@ -133,10 +156,11 @@
                 <div><span class="expEdu__info--logo"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span> <span class="expEdu__info--date">2020-Presente</span></div>
                 <h3>Desarrollo de páginas web <span class="expEdu__info--place">- CodeBerry, Platzi, Ucamp(UTEL), YouTube y Udemy</span></h3>
                 <p>
-                  Actualmente me encuentro estudiando todo lo relacionado con desarrollo web. He 
+                  Actualmente me encuentro estudiando temas relacionados con desarrollo web. He 
                   abarcado los temas de HTML5, CSS3 y JavaScript. Cuento con certificados y 
                   repositorio de prácticas en GitHub. Dejo el enlace: 
-                  <a href="https://github.com/RomanPinelo" title="Repositorio de Roman Pinelo">Repositorio de Roman Pinelo</a>.
+                  <a href="https://github.com/RomanPinelo" title="Repositorio de Roman Pinelo">
+                    <strong>Repositorio de Roman Pinelo</strong></a>.
                   Posteriormente continuaré con los frameworks más populares actualmente.
                 </p>
               </div><!-- expEdu__info -->
@@ -193,6 +217,11 @@
           </div><!-- aboutMe div -->
 
           <div class="portfolio" id="portfolioDiv">
+
+            <span id="portfolioDivLogo" class="portfolio-div-logo">
+              <i class="fa fa-briefcase portfolioOpen" id="portfolioDesktop" aria-hidden="true"></i>
+              <i class="fa fa-times portfolioClose" id="equisPortfolioDesktop"></i>
+            </span>
 
             <h2 class="titlePortfolio">PORTAFOLIO</h2>
 
@@ -658,6 +687,11 @@
 
           <div class="contact" id="contactDiv">
 
+            <span id="contactDivLogo" class="contact-div-logo">
+              <i class="fa fa-envelope-open contactOpen" id="contactDesktop" aria-hidden="true"></i>
+              <i class="fa fa-times contactClose" id="equisContactDesktop"></i>
+            </span>
+
             <h2 class="titleContact">CONTACTO</h2>
 
             <p class="contactDescription">
@@ -728,7 +762,7 @@
             </form>
           </div><!-- contact div -->
 
-        </aside><!-- main__information--menu aside -->
+        </section><!-- main__information--menu aside -->
       </div><!-- main__information div -->
     </main>
 

@@ -4,15 +4,12 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/*
-  #fb5b0f
-*/
-
 /************************************************************* 
   GENERAL STYLES
 *************************************************************/
 :root {
   --decorado: #6956af;
+  --decorado1: #fb5b0f;
   --backgroundBody: #111;
   --text: #fff;
   --htmlLogo: #e34c26;
@@ -114,12 +111,12 @@ html {
 }
 
 /* Cambiar logo del botón del menu */
-.fa-times {
+.closeMenu {
   display: none; /* De inicio el icono de la X no se ve
                     y las barras si */
 }
 
-.fa-bars.noVisible {
+.openMenu.noVisible {
   display: none;  /* Al hacer click en el botón de menu,
                     al icono de las barras se agrega la clase
                     noVisible y desaparece. Si vuelvo a hacer 
@@ -127,7 +124,7 @@ html {
                     quita y aparece*/
 }
 
-.fa-times.Visible {
+.closeMenu.Visible {
   display: inline;  /* Al hacer click en el botón de menu,
                     al icono de la equis se agrega la clase
                     Visible y aparece. Si vuelvo a hacer 
@@ -135,8 +132,6 @@ html {
                     quita y desaparece*/
   color: var(--decorado);
 }
-
-
 /************************************************************* 
   ESTILOS DEL DIV DE TODA LA INFORMACIÓN
 *************************************************************/
@@ -149,20 +144,31 @@ html {
 
 /* Profile photo section */
 .main__information--profilePhoto {
-  outline:1px solid #555;
   display: block;
   width: 20.25rem;
   height: 28rem;
   margin: 1.25rem auto;
 }
 
-/* .main__information--profilePhoto img {
-  poner los estilos al agregar la foto 
-} */
+.main__information--profilePhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
 
-/* Description div */
+.main__information--firstMessage {
+  display: none;
+}
+
+/* Description (home) div */
 .main__information--description {
   width: 100%;
+}
+
+/* Botón que solo se verá en la pantalla de PC */
+.main__information--description .home-div-logo {
+  display: none;
 }
 
 .main__information--description h1 {
@@ -171,36 +177,36 @@ html {
 }
 
 /* Animación del ¡Hola! */
-#desarrollo {
+#saludo {
   animation: fill-letter 5s linear infinite;
 }
     
-#desarrollo path:nth-child(1) {
+#saludo path:nth-child(1) {
   stroke-dasharray: 68;
   stroke-dashoffset: 68;
   animation: letter-anim 5s linear infinite;
 }
-#desarrollo path:nth-child(2) {
-  stroke-dasharray: 134;
-  stroke-dashoffset: 134;
+#saludo path:nth-child(2) {
+  stroke-dasharray: 135;
+  stroke-dashoffset: 135;
   animation: letter-anim1 5s linear infinite;
 }
-#desarrollo path:nth-child(3) {
+#saludo path:nth-child(3) {
   stroke-dasharray: 95;
   stroke-dashoffset: 95;
   animation: letter-anim2 5s linear infinite;
 }
-#desarrollo path:nth-child(4) {
-  stroke-dasharray: 65;
-  stroke-dashoffset: 65;
+#saludo path:nth-child(4) {
+  stroke-dasharray: 66;
+  stroke-dashoffset: 66;
   animation: letter-anim3 5s linear infinite;
 }
-#desarrollo path:nth-child(5) {
+#saludo path:nth-child(5) {
   stroke-dasharray: 112;
   stroke-dashoffset: 112;
   animation: letter-anim4 5s linear infinite;
 }
-#desarrollo path:nth-child(6) {
+#saludo path:nth-child(6) {
   stroke-dasharray: 68;
   stroke-dashoffset: 68;
   animation: letter-anim5 5s linear infinite;
@@ -212,8 +218,8 @@ html {
 }
 
 @keyframes letter-anim1 {
-  0%{stroke-dashoffset: 134;}
-  15%{stroke-dashoffset: 134;}
+  0%{stroke-dashoffset: 135;}
+  15%{stroke-dashoffset: 135;}
   100%{stroke-dashoffset: 0;}
 }
 
@@ -224,8 +230,8 @@ html {
 }
 
 @keyframes letter-anim3 {
-  0%{stroke-dashoffset: 65;}
-  45%{stroke-dashoffset: 65;}
+  0%{stroke-dashoffset: 66;}
+  45%{stroke-dashoffset: 66;}
   100%{stroke-dashoffset: 0;}
 }
 
@@ -247,6 +253,7 @@ html {
   100%{fill: #fff;}
 }
 
+/* Efecto maquina de escribir */
 .main__information--description .animatedText {
   width: 90%;
   height: 8rem;
@@ -263,6 +270,8 @@ html {
   font-style: italic;
   font-weight: bold;
   color: var(--decorado);
+  display: block;
+  width: 100%;
 }
 
 .main__information--description p, 
@@ -279,6 +288,11 @@ html {
 /* about div */
 .main__information--menu .about {
   width: 100%;
+}
+
+/* Botón que solo se verá en la pantalla de PC */
+.about .about-div-logo {
+  display: none;
 }
 
 .main__information--menu .about .titleAbout {
@@ -445,6 +459,11 @@ html {
   width: 100%;
 }
 
+/* Botón que solo se verá en la pantalla de PC */
+.portfolio .portfolio-div-logo {
+  display: none;
+}
+
 .main__information--menu .portfolio .titlePortfolio {
   text-align: center;
   margin-top: 5rem;
@@ -556,6 +575,15 @@ html {
 }
 
 /* contact div */
+.main__information--menu .contact {
+  width: 100%;
+}
+
+/* Botón que solo se verá en la pantalla de PC */
+.contact .contact-div-logo {
+  display: none;
+}
+
 .main__information--menu .contact .titleContact {
   text-align: center;
   margin-top: 5rem;
@@ -564,6 +592,8 @@ html {
   font-family: 'Poppins', sans-serif;
   position: relative;
 }
+
+
 
 .main__information--menu .contact .titleContact::before {
   content: 'CONTÁCTAME';
@@ -731,4 +761,356 @@ html {
 
 .main__information--menu .contact .contact__form button:hover {
   background: transparent;
+}
+
+
+/************************************************************* 
+  DESKTOP SCREEN
+*************************************************************/
+@media screen and (min-width: 1000px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Delete menu button and menu */
+  .main__menuButton, .main__menuButton--options {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+/* Contenedor de fondo de color var(--decorado) */
+  .main__background {
+    background-color: var(--decorado);
+    width: 100%;
+    height: 100vh;
+    clip-path: polygon(0 0, 10% 0, 20% 100%, 0% 100%);
+    position: absolute;
+  }
+
+/* Contenedor de la foto de perfil, mensaje inicial y la información */
+  .main__information {
+    width: 90%;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0 0 7px rgb(0 0 0 / 90%);
+    overflow: hidden;
+    display: flex;
+  }
+
+  .main__information--profilePhoto {
+    width: 30%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .main__information--menu {
+    width: 70%;
+    height: 100%;
+    position: relative;
+  }
+
+/* Mensaje de bienvenida en PC con efecto de máquina de escribir */
+  .main__information--firstMessage {
+    display: block;
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+  }
+
+  .main__information--firstMessage.active {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .main__information--firstMessage .saludo__bienvenida {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    letter-spacing: 0.1875rem;
+    text-align: justify;
+  }
+
+  .main__information--firstMessage .bienvenida {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+
+/* Contenedores individuales de información */
+  .home, .about, .portfolio, .contact {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+/* Home div en desktop */
+  .home {
+    clip-path: circle(40px at 90% 20%);
+    -webkit-transition: -webkit-clip-path 1s;
+    transition: -webkit-clip-path 1s;
+    transition: clip-path 1s;
+    transition: clip-path 1s, -webkit-clip-path 1s;
+  }
+
+  .home.active {
+    clip-path: circle(150% at 90% 20%);
+    z-index: 10;
+  }
+
+  .home .home-div-logo {
+    background: var(--decorado);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 16.5%;
+    left: 91.5%;
+    cursor: pointer;
+  }
+
+  .home .home-div-logo .homeOpen {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .home .home-div-logo .homeClose {
+    display: none;
+  }
+  
+  .home .home-div-logo .homeOpen.noVisible {
+    display: none;
+  }
+  
+  .home .home-div-logo .homeClose.visible {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+  }
+
+  .home h1 {
+    width: 10rem;
+    margin-left: 2rem;
+  }
+
+  .home .animatedText {
+    width: 75%;
+    height: 4rem;
+    margin-left: 2rem;
+  }
+
+  .animatedText .myPosition {
+    display: inline;
+  }
+
+  .home p {
+    width: 75%;
+    margin-left: 2rem;
+  }
+
+/* about div en Desktop */
+  .about {
+    clip-path: circle(40px at 90% 40%);
+    -webkit-transition: -webkit-clip-path 1s;
+    transition: -webkit-clip-path 1s;
+    transition: clip-path 1s;
+    transition: clip-path 1s, -webkit-clip-path 1s;
+  }
+
+  .about.active {
+    clip-path: circle(150% at 90% 40%);
+    z-index: 10;
+  }
+
+  .about .about-div-logo {
+    background: var(--decorado);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 36.5%;
+    left: 91.5%;
+    cursor: pointer;
+  }
+
+  .about .about-div-logo .aboutOpen {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .about .about-div-logo .aboutClose {
+    display: none;
+  }
+  
+  .about .about-div-logo .aboutOpen.noVisible {
+    display: none;
+  }
+  
+  .about .about-div-logo .aboutClose.visible {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+  }
+
+  .about .expEdu {
+    width: 90%;
+  }
+
+  .about .skills__list {
+    margin-left: 2rem;
+  }
+
+/* Portafolio Div en Desktop */
+  .portfolio {
+    clip-path: circle(40px at 90% 60%);
+    -webkit-transition: -webkit-clip-path 1s;
+    transition: -webkit-clip-path 1s;
+    transition: clip-path 1s;
+    transition: clip-path 1s, -webkit-clip-path 1s;
+  }
+
+  .portfolio.active {
+    clip-path: circle(150% at 90% 60%);
+    z-index: 10;
+  }
+
+  .portfolio .portfolio-div-logo {
+    background: var(--decorado);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 56.5%;
+    left: 91.5%;
+    cursor: pointer;
+  }
+
+  .portfolio .portfolio-div-logo .portfolioOpen {
+    position: absolute;
+    font-size: 1.25rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .portfolio .portfolio-div-logo .portfolioClose {
+    display: none;
+  }
+  
+  .portfolio .portfolio-div-logo .portfolioOpen.noVisible {
+    display: none;
+  }
+  
+  .portfolio .portfolio-div-logo .portfolioClose.visible {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+  }
+
+  .main__information--menu .portfolio .portfolio__description,
+  .main__information--menu .portfolio .titlePortfolio {
+    width: 75%;
+    margin-left: 2rem;
+  }
+  
+  .main__information--menu .portfolio .portfolioWorks .portfolioWorks__container {
+    margin-left: 2rem;
+    width: 75%;
+  }
+
+/* Contacto div en Desktop */
+  .contact {
+    clip-path: circle(40px at 90% 80%);
+    -webkit-transition: -webkit-clip-path 1s;
+    transition: -webkit-clip-path 1s;
+    transition: clip-path 1s;
+    transition: clip-path 1s, -webkit-clip-path 1s;
+  }
+
+  .contact.active {
+    clip-path: circle(150% at 90% 80%);
+    z-index: 10;
+  }
+
+  .contact .contact-div-logo {
+    background: var(--decorado);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 76.5%;
+    left: 91.5%;
+    cursor: pointer;
+  }
+
+  .contact .contact-div-logo .contactOpen {
+    position: absolute;
+    font-size: 1.1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .contact .contact-div-logo .contactClose {
+    display: none;
+  }
+  
+  .contact .contact-div-logo .contactOpen.noVisible {
+    display: none;
+  }
+  
+  .contact .contact-div-logo .contactClose.visible {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+  }
+  
+  .main__information--menu .contact .titleContact,
+  .main__information--menu .contact .contactDescription,
+  .main__information--menu .contact .socialMediaLinks,
+  .main__information--menu .contact .contact__form {
+    width: 75%;
+    margin-left: 2rem;
+  }
 }

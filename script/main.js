@@ -8,6 +8,7 @@ menu.addEventListener('click', () => {
 });
 
 /* Configuración de la libreria de typed.js */
+/* Presentación */
 var typed = new Typed('#typed', {
   stringsElement: '#textStrings', // ID del elemento que contiene cadenas de texto a mostrar.
   typeSpeed: 75, // Velocidad en milisegundos para poner una letra,
@@ -19,11 +20,27 @@ var typed = new Typed('#typed', {
   loop: true, // Repetir el array de strings
   loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
   showCursor: true, // Mostrar cursor palpitanto
-  cursorChar: '|', // Caracter para el cursor
+  cursorChar: '', // Caracter para el cursor
   contentType: 'html', // 'html' permite trabajar texto con formato (etiquetas HTML) como lo tenemos en
                         //strings o 'null' para texto sin formato, es decir si pongo las etiquetas, saldran 
                         //tal cual esta el texto.
-  });
+});
+
+/* Primer mensaje en pantalla de PC */
+var typed1 = new Typed('#typedFirstMessage', {
+  stringsElement: '#textStrings1', 
+  typeSpeed: 75,
+  startDelay: 300,
+  backSpeed: 75,
+  smartBackspace: false,
+  shuffle: false,
+  backDelay: 1500,
+  loop: true,
+  loopCount: 1,
+  showCursor: true,
+  cursorChar: '|',
+  contentType: 'html',
+});
 
 /* 
 Resaltar color del botón del menú presionado.
@@ -101,8 +118,48 @@ worksMenu.addEventListener('click', () => {
 
 /* Con estas lineas obtenemos la longitud que debemos dar al 
 stroke-dasharray y stroke-dashoffset de cada letra en el CSS*/
-const logo = document.querySelectorAll('#desarrollo path');
+const logo = document.querySelectorAll('#saludo path');
 
 for(let i=0; i<logo.length; i++){
   console.log('Letter ' + i + ' is ' + logo[i].getTotalLength());
 }
+
+/***********************************************************************************
+  DESKTOP SCREEN
+***********************************************************************************/
+/* Botones que hacen crecer cada div de información. */
+let homeDesktop = document.getElementById('homeDivLogo');
+
+homeDesktop.addEventListener('click', () => {
+  document.getElementById('description').classList.toggle('active');
+  document.getElementById('homeDesktop').classList.toggle('noVisible');
+  document.getElementById('equisHomeDesktop').classList.toggle('visible');
+  document.getElementById('firstMessageDesktop').classList.toggle('active');
+});
+
+let aboutDesktop = document.getElementById('aboutDivLogo');
+
+aboutDesktop.addEventListener('click', () => {
+  document.getElementById('aboutMe').classList.toggle('active');
+  document.getElementById('aboutDesktop').classList.toggle('noVisible');
+  document.getElementById('equisAboutDesktop').classList.toggle('visible');
+  document.getElementById('firstMessageDesktop').classList.toggle('active');
+});
+
+let portfolioDesktop = document.getElementById('portfolioDivLogo');
+
+portfolioDesktop.addEventListener('click', () => {
+  document.getElementById('portfolioDiv').classList.toggle('active');
+  document.getElementById('portfolioDesktop').classList.toggle('noVisible');
+  document.getElementById('equisPortfolioDesktop').classList.toggle('visible');
+  document.getElementById('firstMessageDesktop').classList.toggle('active');
+});
+
+let contactDesktop = document.getElementById('contactDivLogo');
+
+contactDesktop.addEventListener('click', () => {
+  document.getElementById('contactDiv').classList.toggle('active');
+  document.getElementById('contactDesktop').classList.toggle('noVisible');
+  document.getElementById('equisContactDesktop').classList.toggle('visible');
+  document.getElementById('firstMessageDesktop').classList.toggle('active');
+});
