@@ -1,6 +1,6 @@
 <?php
 
-$destinatario = 'l.espi1213@gmail.com';  //esto es al correo al que se enviara el mensaje del usuario.
+$destinatario = 'prof.roman.pinelo@gmail.com';  //esto es al correo al que se enviara el mensaje del usuario.
 $nombre = $_POST['nombre'];
 $asunto = $_POST['asunto'];
 $mensaje = $_POST['mensaje'];

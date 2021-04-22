@@ -742,17 +742,14 @@ html {
   padding-left: 20px;
 }
 
-.main__information--menu .contact .contact__form input:focus {
+.main__information--menu .contact .contact__form input:focus,
+.main__information--menu .contact .contact__form textarea:focus {
   outline: none;
 }
 
 .main__information--menu .contact .contact__form textarea {
   padding: 15px;
   text-align: justify;
-}
-
-.main__information--menu .contact .contact__form textarea:focus {
-  outline: none;
 }
 
 .main__information--menu .contact .contact__form button {
