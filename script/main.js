@@ -163,3 +163,31 @@ contactDesktop.addEventListener('click', () => {
   document.getElementById('equisContactDesktop').classList.toggle('visible');
   document.getElementById('firstMessageDesktop').classList.toggle('active');
 });
+
+/* Tooltip del botón de Principal */
+tippy('#homeDivLogo', {
+  content: '<strong style="color:#6956af;">Principal</strong>',
+  allowHTML: true,
+  followCursor: true,
+});
+
+/* Tooltip del botón de Acerca de */
+tippy('#aboutDivLogo', {
+  content: '<strong style="color:#6956af;">Acerca de</strong>',
+  allowHTML: true,
+  followCursor: true,
+});
+
+/* Tooltip del botón de Portafolio */
+tippy('#portfolioDivLogo', {
+  content: '<strong style="color:#6956af;">Portafolio</strong>',
+  allowHTML: true,
+  followCursor: true,
+});
+
+/* Tooltip del botón de Contacto */
+tippy('#contactDivLogo', {
+  content: '<strong style="color:#6956af;">Contacto</strong>',
+  allowHTML: true,
+  followCursor: true,
+});

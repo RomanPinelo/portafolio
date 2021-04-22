@@ -28,6 +28,11 @@
   --liLogoHover: #0e5d81;
   --waLogoHover: #187a2f;
   --ghLogoHover: #000;
+  --scrollbarTrack: #6956af55;
+  --scrollbarBtnActive: #281a5e;
+  --scrollbarThumb: rgba(0, 0, 0, 0.5);
+  --scrollbarThumbHover: rgba(0, 0, 0, 0.75);
+  --scrollbarThumbActive: rgba(0, 0, 0, 0.85);
 }
 
 body {
@@ -725,6 +730,12 @@ html {
   border-radius: 10px;
 }
 
+.main__information--menu .contact .contact__form input,
+.main__information--menu .contact .contact__form textarea {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--text);
+}
+
 .main__information--menu .contact .contact__form input {
   height: 2rem;
   font-size: 1.25rem;
@@ -764,6 +775,18 @@ html {
 }
 
 
+
+/************************************************************* 
+  Tablet SCREEN
+*************************************************************/
+@media screen and (min-width: 768px) {
+  .main__information--menu .about .dataAboutMe .mail {
+    margin-left: 0;
+  }
+}
+
+
+
 /************************************************************* 
   DESKTOP SCREEN
 *************************************************************/
@@ -773,6 +796,35 @@ html {
     height: 100vh;
     overflow: hidden;
   }
+
+  /* Mensaje al hacer hover en los botones del portafolio en la pantalla de PC */
+  /* [data-title]:hover::after {
+    opacity: 1;
+    transition: all 0.5s ease 0.5s;
+    visibility: visible;
+  }
+
+  [data-title]::after {
+    content: attr(data-title);
+    background: #333;
+    color: var(--decorado);
+    font-size: 0.875rem;
+    position: absolute;           ALTERNATIVA PARA MOSTRAR TITULO DE UN ENLACE O BOTON AL HACER HOVER Y 
+    bottom: -1.6rem;              PERSONALIZARLO
+    left: 100%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px var(--decorado);
+    padding: 3px 20px;
+    opacity: 0;
+    border: 1px solid var(--decorado);
+    z-index: 99999;
+    visibility: hidden;
+    border-radius: 6px;
+  }
+
+  [data-title] {
+    position: relative;
+  } */
 
   /* Delete menu button and menu */
   .main__menuButton, .main__menuButton--options {
@@ -802,7 +854,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 20px;
+    border-radius: 20px 10px 10px 20px;
     box-shadow: 0 0 7px rgb(0 0 0 / 90%);
     overflow: hidden;
     display: flex;
@@ -1112,5 +1164,77 @@ html {
   .main__information--menu .contact .contact__form {
     width: 75%;
     margin-left: 2rem;
+  }
+
+    /*************************************************************
+    ESTILZANDO LAS BARRAS DE SCROLL
+  *************************************************************/
+  /* Cuando este pseudo elemento esta presente, webkit desactiva su funcionalidad de visualización por defecto utilizada sobre las barras, y a cambio utiliza el CSS que se proveyó. */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  /* Con esta instrucción, la nueva barra de desplazamiento tendrá un aspecto plano y se aplicará el color especificado como fondo. */
+  ::-webkit-scrollbar-track {
+    background-color: var(--scrollbarTrack);
+  }
+
+  /* El código lo utilizaremos para darle color al deslizador */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarThumb);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbarThumbHover);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background-color: var(--scrollbarThumbActive);
+  }
+
+  /* también podemos dar estilo a los botones que se ubican en la parte superior e inferior de la barra, en caso de ser vertical, o en los extremos laterales en caso de ser horizontal, para ello utilizamos esta sentencia */
+  ::-webkit-scrollbar-button:increment:horizontal {
+    background-color: var(--decorado);
+    background-image: url(../img/icons8-adelante-24.png);
+    background-size: cover;
+  }
+
+  ::-webkit-scrollbar-button:increment:horizontal:active {
+    background-color: var(--scrollbarBtnActive);
+  }
+
+  ::-webkit-scrollbar-button:decrement:horizontal {
+    background-color: var(--decorado);
+    background-image: url(../img/icons8-atr%C3%A1s-24.png);
+    background-size: cover;
+  }
+
+  ::-webkit-scrollbar-button:decrement:horizontal:active {
+    background-color: var(--scrollbarBtnActive);
+  }
+
+  ::-webkit-scrollbar-button:increment:vertical {
+    background-color: var(--decorado);
+    background-image: url(../img/icons8-chevron-abajo-24.png);
+    background-size: cover;
+  }
+
+  ::-webkit-scrollbar-button:increment:vertical:active {
+    background-color: var(--scrollbarBtnActive);
+  }
+
+  ::-webkit-scrollbar-button:decrement:vertical {
+    background-color: var(--decorado);
+    background-image: url(../img/icons8-chevron-para-arriba-24.png);
+    background-size: cover;
+  }
+
+  ::-webkit-scrollbar-button:decrement:vertical:active {
+    background-color: var(--scrollbarBtnActive);
+  }
+
+  /* En caso de que ambas barras de desplazamiento (horizontal y vertical) aparezcan, es recomendado dar un estilo a la esquina, y eso se logra así */
+  ::-webkit-scrollbar-corner {
+    background-color: black;
   }
 }
