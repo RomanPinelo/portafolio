@@ -117,7 +117,7 @@ worksMenu.addEventListener('click', () => {
 
 
 /* Con estas lineas obtenemos la longitud que debemos dar al 
-stroke-dasharray y stroke-dashoffset de cada letra en el CSS*/
+stroke-dasharray y stroke-dashoffset de cada letra del texto svg en el CSS*/
 const logo = document.querySelectorAll('#saludo path');
 
 for(let i=0; i<logo.length; i++){
