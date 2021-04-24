@@ -29,7 +29,7 @@ var typed = new Typed('#typed', {
 /* Primer mensaje en pantalla de PC */
 var typed1 = new Typed('#typedFirstMessage', {
   stringsElement: '#textStrings1', 
-  typeSpeed: 75,
+  typeSpeed: 25,
   startDelay: 300,
   backSpeed: 75,
   smartBackspace: false,
