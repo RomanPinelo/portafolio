@@ -719,9 +719,21 @@ html {
 }
 
 /* Formulario de contacto */
+.formTitle {
+  width: 90%;
+  margin: 3rem auto 0;
+  color: #555;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.formTitle a {
+  color: #999;
+}
+
 .main__information--menu .contact .contact__form {
   width: 90%;
-  margin: 30px auto;
+  margin: 0 auto 30px;
 }
 
 .main__information--menu .contact .contact__form label,
