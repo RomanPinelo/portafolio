@@ -731,6 +731,10 @@ html {
   color: #999;
 }
 
+.formTitle a:hover {
+  color: #555;
+}
+
 .main__information--menu .contact .contact__form {
   width: 90%;
   margin: 0 auto 30px;
