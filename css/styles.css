@@ -183,38 +183,38 @@ html {
 
 /* Animación del ¡Hola! */
 #saludo {
-  animation: fill-letter 5s ease forwards;
+  animation: fill-letter 5s linear infinite;
 }
     
 #saludo path:nth-child(1) {
   stroke-dasharray: 68;
   stroke-dashoffset: 68;
-  animation: letter-anim 5s ease forwards;
+  animation: letter-anim 5s linear infinite;
 }
 #saludo path:nth-child(2) {
   stroke-dasharray: 135;
   stroke-dashoffset: 135;
-  animation: letter-anim1 5s ease forwards;
+  animation: letter-anim1 5s linear infinite;
 }
 #saludo path:nth-child(3) {
   stroke-dasharray: 95;
   stroke-dashoffset: 95;
-  animation: letter-anim2 5s ease forwards;
+  animation: letter-anim2 5s linear infinite;
 }
 #saludo path:nth-child(4) {
   stroke-dasharray: 66;
   stroke-dashoffset: 66;
-  animation: letter-anim3 5s ease forwards;
+  animation: letter-anim3 5s linear infinite;
 }
 #saludo path:nth-child(5) {
   stroke-dasharray: 112;
   stroke-dashoffset: 112;
-  animation: letter-anim4 5s ease forwards;
+  animation: letter-anim4 5s linear infinite;
 }
 #saludo path:nth-child(6) {
   stroke-dasharray: 68;
   stroke-dashoffset: 68;
-  animation: letter-anim5 5s ease forwards;
+  animation: letter-anim5 5s linear infinite;
 }
 
 @keyframes letter-anim {
